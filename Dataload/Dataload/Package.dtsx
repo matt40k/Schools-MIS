@@ -1,0 +1,635 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/14/2015 10:33:39 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="MATT-LAPTOP"
+  DTS:CreatorName="MATT-LAPTOP\Matt"
+  DTS:DTSID="{262CE1FB-5176-4055-8601-CB39347AF60B}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{74CCD14D-D024-4F4F-AB4B-EF6E101D27F1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_CM_MIS]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{2EB40FDC-623C-4963-A5FB-B25FE46E378D}"
+      DTS:ObjectName="FF_CM_MIS">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CSVFile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="School_Code"
+              DTS:DTSID="{4436FF18-D873-4FF9-B938-673C4ADA2166}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supplier"
+              DTS:DTSID="{AABCBA59-49B8-4F49-82BD-0DDD4579995A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C348783-41F8-45B2-BF4D-965079065D6E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CSVFile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\EXEC_Truncate_MIS"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E448C3AB-0C02-4CAC-AECC-0301B8412DDD}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXEC_Truncate_MIS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{34EEDA59-2EDB-4F85-BE7F-2405F1BEDE98}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="truncate table staging.mis" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FELC_LoadCSVs"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach CSV file"
+      DTS:DTSID="{C5447EB0-D185-487E-8480-5067721C1ADF}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FELC_LoadCSVs">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="DTS.ForEachFileEnumerator.3"
+        DTS:DTSID="{FE4ED2AD-A007-47BB-B27E-7F3AED1584CF}"
+        DTS:ObjectName="{FE4ED2AD-A007-47BB-B27E-7F3AED1584CF}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\Matt\Documents\GitHub\Schools-MIS" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FELC_LoadCSVs\DFT_MIS"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E09067C5-DA25-4FA9-9AC1-53F79A3ABF83}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_MIS"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DER_AddFileName"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Output].Columns[Year]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Output].Columns[Year]"
+                          name="Year"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_I2)[SUBSTRING]([RIGHT](@[User::CSVFile],8),1,4)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I2)SUBSTRING(RIGHT(@[User::CSVFile],8),1,4)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS"
+                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2057"
+                  name="FF_SRC_MIS"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_CM_MIS]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_CM_MIS]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].Columns[School_Code]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].ExternalColumns[School_Code]"
+                          length="50"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].Columns[School_Code]"
+                          name="School_Code"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].Columns[Supplier]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].ExternalColumns[Supplier]"
+                          length="50"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].Columns[Supplier]"
+                          name="Supplier"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].ExternalColumns[School_Code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="School_Code" />
+                        <externalMetadataColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].ExternalColumns[Supplier]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Supplier" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST_MIS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Staging].[MIS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Connections[OleDbConnection]"
+                      connectionManagerID="{34EEDA59-2EDB-4F85-BE7F-2405F1BEDE98}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost MIS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].Columns[School_Code]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="School_Code"
+                          externalMetadataColumnId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].ExternalColumns[School_Code]"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].Columns[School_Code]" />
+                        <inputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].Columns[Supplier]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Supplier"
+                          externalMetadataColumnId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].ExternalColumns[Supplier]"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output].Columns[Supplier]" />
+                        <inputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].Columns[Year]"
+                          cachedDataType="i2"
+                          cachedName="Year"
+                          externalMetadataColumnId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Output].Columns[Year]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].ExternalColumns[School_Code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="School_Code" />
+                        <externalMetadataColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].ExternalColumns[Supplier]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Supplier" />
+                        <externalMetadataColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                          dataType="i4"
+                          name="Year" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FELC_LoadCSVs\DFT_MIS.Paths[Derived Column Output]"
+                  endId="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\FELC_LoadCSVs\DFT_MIS.Paths[Flat File Source Output]"
+                  endId="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{818F1C8C-07D6-4D00-9983-ED2B4C338947}"
+          DTS:ObjectName="{818F1C8C-07D6-4D00-9983-ED2B4C338947}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CSVFile" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A9E6E571-FB3A-42D9-9993-A8410071A99D}"
+      DTS:From="Package\EXEC_Truncate_MIS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FELC_LoadCSVs" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="122,42"
+          Id="Package\FELC_LoadCSVs\DFT_MIS"
+          TopLeft="20.5,22.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="179,119"
+          Size="179,162"
+          Id="Package\FELC_LoadCSVs"
+          TopLeft="26.5,107.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\EXEC_Truncate_MIS"
+          TopLeft="32.5,15.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="118,57.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FELC_LoadCSVs\DFT_MIS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\FELC_LoadCSVs\DFT_MIS\FF_SRC_MIS"
+          TopLeft="19,5.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS"
+          TopLeft="15,209.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\FELC_LoadCSVs\DFT_MIS\DER_AddFileName"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\FELC_LoadCSVs\DFT_MIS.Paths[Flat File Source Output]"
+          TopLeft="88.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FELC_LoadCSVs\DFT_MIS.Paths[Derived Column Output]"
+          TopLeft="88.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
