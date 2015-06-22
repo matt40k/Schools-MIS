@@ -12,11 +12,116 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{081DE6EE-6FC8-46F1-A57E-0C3CA7372A80}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{F8FA1D52-25EB-4A21-99B4-CC3C87A1B96C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_CM_DataPoint]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AF6BBEF2-7FEF-4A75-9AD2-E6D0D6A6A2A7}"
+      DTS:ObjectName="FF_CM_DataPoint">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CodePointFile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="7"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Postcode"
+              DTS:DTSID="{1F00B21D-1A06-4E9E-B415-A5763A6590A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Positional_quality_indicator"
+              DTS:DTSID="{85771F7E-870F-4EB6-855E-849FBAAB161C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Eastings"
+              DTS:DTSID="{45A719F5-E0C7-48FB-A3E1-56E8E7344D1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Northings"
+              DTS:DTSID="{882E3B2C-F05D-4297-89AB-4BFB577AE425}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="9"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country_code"
+              DTS:DTSID="{6E783FF6-DD19-4CDC-8565-C754D48BF6BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHS_regional_HA_code"
+              DTS:DTSID="{30BB00CD-7E5A-436F-8327-E3A4B26BE376}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="9"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHS_HA_code"
+              DTS:DTSID="{D19635E8-17F5-461B-93D1-AC5F72313DD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Admin_county_code"
+              DTS:DTSID="{67319C8B-E22A-4E27-9A5A-507E495D80C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="9"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Admin_district_code"
+              DTS:DTSID="{8FB715D3-B7A4-4CD3-8403-5BC8EAE9941D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="9"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Admin_ward_code"
+              DTS:DTSID="{B2B45636-2523-41EB-A32C-DA96E81F4041}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FF_CM_Edubase_Extract]"
       DTS:CreationName="FLATFILE"
@@ -1138,6 +1243,25 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C9CECFC8-4479-4233-8B9F-2924436988D9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CodePointDir">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Matt\Documents\GitHub\Schools-MIS\OrdnanceSurvey\Code-Point\Data\CSV</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1079C7BF-C53C-467A-B84A-2AA03CA336E1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CodePointFile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{8C348783-41F8-45B2-BF4D-965079065D6E}"
@@ -5059,7 +5183,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="EXEC_Truncate_Edubase"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5106,7 +5230,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="EXEC_Truncate_MIS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5530,6 +5654,2485 @@
           DTS:To="Package\SEQC_FOI_Data\FELC_LoadCSVs" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_OrdnanceSurvey"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7662978C-AE9C-48A7-A482-137E084E4F88}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_OrdnanceSurvey">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{B0DD9934-CC9B-47FA-B140-E7AB33D777CD}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SEQC_Code-Point">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\EXEC_Truncate_Code-Point"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{2B48E7A0-2516-4EF4-9500-B704138B0A67}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="EXEC_Truncate_Code-Point"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{34EEDA59-2EDB-4F85-BE7F-2405F1BEDE98}"
+                  SQLTask:SqlStatementSource="TRUNCATE TABLE [Staging].[Code-Point]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles"
+              DTS:CreationName="STOCK:FOREACHLOOP"
+              DTS:Description="Foreach Loop Container"
+              DTS:DTSID="{04242A4D-D3FA-4DE9-9FE0-64917AD586B9}"
+              DTS:ExecutableType="STOCK:FOREACHLOOP"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="FELC_LoadCSVFiles">
+              <DTS:ForEachEnumerator
+                DTS:CreationName="DTS.ForEachFileEnumerator.3"
+                DTS:DTSID="{399B052A-1838-41FC-88C9-01770F951402}"
+                DTS:ObjectName="{399B052A-1838-41FC-88C9-01770F951402}">
+                <DTS:PropertyExpression
+                  DTS:Name="Directory">@[User::CodePointDir]</DTS:PropertyExpression>
+                <DTS:ObjectData>
+                  <ForEachFileEnumeratorProperties>
+                    <FEFEProperty
+                      Folder="C:\Users\Matt\Documents\GitHub\Schools-MIS\OrdnanceSurvey\Code-Point\Data\CSV" />
+                    <FEFEProperty
+                      FileSpec="*.csv" />
+                    <FEFEProperty
+                      FileNameRetrievalType="0" />
+                    <FEFEProperty
+                      Recurse="0" />
+                  </ForEachFileEnumeratorProperties>
+                </DTS:ObjectData>
+              </DTS:ForEachEnumerator>
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point"
+                  DTS:CreationName="SSIS.Pipeline.3"
+                  DTS:Description="Data Flow Task"
+                  DTS:DTSID="{05FD9660-CF4A-40FF-B82D-C1E3DF6A3AD3}"
+                  DTS:ExecutableType="SSIS.Pipeline.3"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="DFT_Code-Point"
+                  DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <pipeline
+                      version="1">
+                      <components>
+                        <component
+                          refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename"
+                          componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                          contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                          description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                          name="DER_Filename"
+                          usesDispositions="true">
+                          <inputs>
+                            <input
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Inputs[Derived Column Input]"
+                              description="Input to the Derived Column Transformation"
+                              name="Derived Column Input">
+                              <externalMetadataColumns />
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Output]"
+                              description="Default Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              name="Derived Column Output"
+                              synchronousInputId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Output].Columns[File]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Computation"
+                                  errorRowDisposition="FailComponent"
+                                  length="2"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Output].Columns[File]"
+                                  name="File"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Expression"
+                                      name="Expression">(DT_STR,2,1252)[SUBSTRING]([RIGHT](@[User::CodePointFile],6),1,2)</property>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Friendly Expression"
+                                      expressionType="Notify"
+                                      name="FriendlyExpression">(DT_STR,2,1252)SUBSTRING(RIGHT(@[User::CodePointFile],6),1,2)</property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Error Output]"
+                              description="Error Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="Derived Column Error Output"
+                              synchronousInputId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point"
+                          componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                          contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                          description="Flat File Source"
+                          localeId="2057"
+                          name="FF_SRC_Data-Point"
+                          usesDispositions="true"
+                          version="1">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Specifies whether zero-length columns are treated as null."
+                              name="RetainNulls">false</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                              name="FileNameColumnName"></property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Connections[FlatFileConnection]"
+                              connectionManagerID="Package.ConnectionManagers[FF_CM_DataPoint]"
+                              connectionManagerRefId="Package.ConnectionManagers[FF_CM_DataPoint]"
+                              name="FlatFileConnection" />
+                          </connections>
+                          <outputs>
+                            <output
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output]"
+                              name="Flat File Source Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Postcode]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Postcode]"
+                                  length="7"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Postcode]"
+                                  name="Postcode"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Positional_quality_indicator]"
+                                  dataType="i1"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Positional_quality_indicator]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Positional_quality_indicator]"
+                                  name="Positional_quality_indicator"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Eastings]"
+                                  dataType="i4"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Eastings]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Eastings]"
+                                  name="Eastings"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Northings]"
+                                  dataType="i4"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Northings]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Northings]"
+                                  name="Northings"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Country_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Country_code]"
+                                  length="9"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Country_code]"
+                                  name="Country_code"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[NHS_regional_HA_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[NHS_regional_HA_code]"
+                                  length="255"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[NHS_regional_HA_code]"
+                                  name="NHS_regional_HA_code"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[NHS_HA_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[NHS_HA_code]"
+                                  length="9"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[NHS_HA_code]"
+                                  name="NHS_HA_code"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_county_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Admin_county_code]"
+                                  length="255"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_county_code]"
+                                  name="Admin_county_code"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_district_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Admin_district_code]"
+                                  length="9"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_district_code]"
+                                  name="Admin_district_code"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_ward_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Admin_ward_code]"
+                                  length="9"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_ward_code]"
+                                  name="Admin_ward_code"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Postcode]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="7"
+                                  name="Postcode" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Positional_quality_indicator]"
+                                  dataType="i1"
+                                  name="Positional_quality_indicator" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Eastings]"
+                                  dataType="i4"
+                                  name="Eastings" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Northings]"
+                                  dataType="i4"
+                                  name="Northings" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Country_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="Country_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[NHS_regional_HA_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="255"
+                                  name="NHS_regional_HA_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[NHS_HA_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="NHS_HA_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Admin_county_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="255"
+                                  name="Admin_county_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Admin_district_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="Admin_district_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].ExternalColumns[Admin_ward_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="Admin_ward_code" />
+                              </externalMetadataColumns>
+                            </output>
+                            <output
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Error Output]"
+                              isErrorOut="true"
+                              name="Flat File Source Error Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                                  codePage="1252"
+                                  dataType="text"
+                                  description="Flat File Source Error Output Column"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                                  name="Flat File Source Error Output Column" />
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point"
+                          componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                          contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                          description="OLE DB Destination"
+                          name="OLE_DST_Code-Point"
+                          usesDispositions="true"
+                          version="4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                              name="CommandTimeout">0</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of the database object used to open a rowset."
+                              name="OpenRowset">[Staging].[Code-Point]</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the variable that contains the name of the database object used to open a rowset."
+                              name="OpenRowsetVariable"></property>
+                            <property
+                              dataType="System.String"
+                              description="The SQL command to be executed."
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Forces the use of the DefaultCodePage property value when describing character data."
+                              name="AlwaysUseDefaultCodePage">false</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the mode used to access the database."
+                              name="AccessMode"
+                              typeConverter="AccessMode">3</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                              name="FastLoadKeepIdentity">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                              name="FastLoadKeepNulls">false</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                              name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                              name="FastLoadMaxInsertCommitSize">2147483647</property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Connections[OleDbConnection]"
+                              connectionManagerID="{34EEDA59-2EDB-4F85-BE7F-2405F1BEDE98}:external"
+                              connectionManagerRefId="Project.ConnectionManagers[LocalHost MIS]"
+                              description="The OLE DB runtime connection used to access the database."
+                              name="OleDbConnection" />
+                          </connections>
+                          <inputs>
+                            <input
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input]"
+                              errorOrTruncationOperation="Insert"
+                              errorRowDisposition="FailComponent"
+                              hasSideEffects="true"
+                              name="OLE DB Destination Input">
+                              <inputColumns>
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Postcode]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="7"
+                                  cachedName="Postcode"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Postcode]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Positional_quality_indicator]"
+                                  cachedDataType="i1"
+                                  cachedName="Positional_quality_indicator"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Positional_quality_indicator]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Positional_quality_indicator]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Eastings]"
+                                  cachedDataType="i4"
+                                  cachedName="Eastings"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Eastings]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Eastings]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Northings]"
+                                  cachedDataType="i4"
+                                  cachedName="Northings"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Northings]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Northings]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Country_code]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="9"
+                                  cachedName="Country_code"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Country_code]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Country_code]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[NHS_regional_HA_code]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="255"
+                                  cachedName="NHS_regional_HA_code"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[NHS_regional_HA_code]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[NHS_regional_HA_code]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[NHS_HA_code]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="9"
+                                  cachedName="NHS_HA_code"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[NHS_HA_code]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[NHS_HA_code]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Admin_county_code]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="255"
+                                  cachedName="Admin_county_code"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Admin_county_code]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_county_code]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Admin_district_code]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="9"
+                                  cachedName="Admin_district_code"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Admin_district_code]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_district_code]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Admin_ward_code]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="9"
+                                  cachedName="Admin_ward_code"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Admin_ward_code]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Admin_ward_code]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[File]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="2"
+                                  cachedName="File"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[File]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Output].Columns[File]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Latitude]"
+                                  cachedDataType="r4"
+                                  cachedName="Latitude"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0].Columns[Latitude]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].Columns[Longitude]"
+                                  cachedDataType="r4"
+                                  cachedName="Longitude"
+                                  externalMetadataColumnId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0].Columns[Longitude]" />
+                              </inputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="7"
+                                  name="Postcode" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Positional_quality_indicator]"
+                                  dataType="i2"
+                                  name="Positional_quality_indicator" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Eastings]"
+                                  dataType="i4"
+                                  name="Eastings" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Northings]"
+                                  dataType="i4"
+                                  name="Northings" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Country_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="Country_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[NHS_regional_HA_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="255"
+                                  name="NHS_regional_HA_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[NHS_HA_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="NHS_HA_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Admin_county_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="255"
+                                  name="Admin_county_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Admin_district_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="Admin_district_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Admin_ward_code]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="9"
+                                  name="Admin_ward_code" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[File]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="2"
+                                  name="File" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                                  dataType="r8"
+                                  name="Latitude" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                                  dataType="r8"
+                                  name="Longitude" />
+                              </externalMetadataColumns>
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Outputs[OLE DB Destination Error Output]"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="OLE DB Destination Error Output"
+                              synchronousInputId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat"
+                          componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                          contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8"
+                          description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                          name="SC_ConvertToLongLat"
+                          version="8">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Stores the source code of the component"
+                              isArray="true"
+                              name="SourceCode"
+                              state="cdata">
+                              <arrayElements
+                                arrayElementCount="51">
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+using TDPG.GeoCoordConversion;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+
+        long easting = Row.Eastings;
+        long northing = Row.Northings;
+        // assume easting & northing are set.
+        GridReference gridRef = new GridReference(easting, northing);
+        PolarGeoCoordinate polarCoord = GridReference.ChangeToPolarGeo(gridRef);
+        polarCoord = PolarGeoCoordinate.ChangeCoordinateSystem(polarCoord,
+            CoordinateSystems.WGS84);
+        // Pull Lat/Lon coordinates from polarCoord.Lat & polarCood.Lon
+        Row.Longitude = (float)polarCoord.Lon;
+        Row.Latitude = (float)polarCoord.Lat;
+    }
+
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int32 Eastings
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[0]);
+        }
+    }
+    public bool Eastings_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public Int32 Northings
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[1]);
+        }
+    }
+    public bool Northings_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public Single Latitude
+    {
+        set
+        {
+            this[2] = value;
+        }
+    }
+    public bool Latitude_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(2);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public Single Longitude
+    {
+        set
+        {
+            this[3] = value;
+        }
+    }
+    public bool Longitude_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(3);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_278b31afde6045dab316fedb6367462b.Properties.Settings.get_Default():SC_278b31afde6045dab316fedb6367462b.Properties.Sett" +
+    "ings")]
+
+namespace SC_278b31afde6045dab316fedb6367462b.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[Project]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_278b31afde6045dab316fedb6367462b</msb:CodeName>
+		<msb:DisplayName>SC_278b31afde6045dab316fedb6367462b</msb:DisplayName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:ProjectId>{3E296A56-44EB-40FE-8000-00F3635E9C2C}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_278b31afde6045dab316fedb6367462b.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+		<msb:File Include="HelmertTransform.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="PolarGeoCoordinate.cs"/>
+		<msb:File Include="AngleUnit.cs"/>
+		<msb:File Include="Converter.cs"/>
+		<msb:File Include="CoordinateSystems.cs"/>
+		<msb:File Include="EllipseParameter.cs"/>
+		<msb:File Include="GridReference.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_278b31afde6045dab316fedb6367462b")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_278b31afde6045dab316fedb6367462b")]
+[assembly: AssemblyCopyright("Copyright @  2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[SC_278b31afde6045dab316fedb6367462b.csproj]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B984C3EB-514D-432F-8833-FC654EF3A6EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_278b31afde6045dab316fedb6367462b</RootNamespace>
+    <AssemblyName>SC_278b31afde6045dab316fedb6367462b</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="AngleUnit.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="CoordinateSystems.cs" />
+    <Compile Include="EllipseParameter.cs" />
+    <Compile Include="GridReference.cs" />
+    <Compile Include="HelmertTransform.cs" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="PolarGeoCoordinate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="devenv.exe" DebugInfoCommandLine="/vstaHostDebugUri:&quot;vstadebuga40b236e-b771-4484-90b9-9cdad1efdd21/de3be71d-814c-4c36-8c15-574c79fd2901&quot;" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC110</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_278b31afde6045dab316fedb6367462b.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_278b31afde6045dab316fedb6367462b.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_278b31afde6045dab316fedb6367462b.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_278b31afde6045dab316fedb6367462b.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_278b31afde6045dab316fedb6367462b.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[AngleUnit.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[// Decompiled with JetBrains decompiler
+// Type: TDPG.GeoCoordConversion.AngleUnit
+// Assembly: GeoCoordConversion, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4BF73D91-F20E-492B-89D2-82533B8FA2C8
+// Assembly location: C:\Users\Matt\Downloads\GeoCoordConversion_1_0_1_0.dll
+
+namespace TDPG.GeoCoordConversion
+{
+  public enum AngleUnit
+  {
+    Radians,
+    Degrees,
+  }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[Converter.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[// Decompiled with JetBrains decompiler
+// Type: TDPG.GeoCoordConversion.Converter
+// Assembly: GeoCoordConversion, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4BF73D91-F20E-492B-89D2-82533B8FA2C8
+// Assembly location: C:\Users\Matt\Downloads\GeoCoordConversion_1_0_1_0.dll
+
+using System;
+
+namespace TDPG.GeoCoordConversion
+{
+  internal static class Converter
+  {
+    private static double _NatGridScaleFactor = 0.9996012717;
+    private static GridReference _NatNETrueOrigin = new GridReference(400000L, -100000L);
+    private static PolarGeoCoordinate _NatGridTrueOrigin = PolarGeoCoordinate.ChangeUnits(new PolarGeoCoordinate(49.0, -2.0, 0.0, AngleUnit.Degrees, CoordinateSystems.OSGB36), AngleUnit.Radians);
+    private static EllipseParameter _Airy1830 = EllipseParameter.GetEllipseParameters(EllipseParameter.Ellipses.Airy1830);
+    private static double _e2 = 1.0 - Math.Pow(Converter._Airy1830.SemiMinorAxis, 2.0) / Math.Pow(Converter._Airy1830.SemimajorAxis, 2.0);
+    private static double _n = (Converter._Airy1830.SemimajorAxis - Converter._Airy1830.SemiMinorAxis) / (Converter._Airy1830.SemimajorAxis + Converter._Airy1830.SemiMinorAxis);
+    private static double _n2 = Math.Pow(Converter._n, 2.0);
+    private static double _n3 = Math.Pow(Converter._n, 3.0);
+
+    internal static PolarGeoCoordinate Convert(PolarGeoCoordinate source, CoordinateSystems destination)
+    {
+      PolarGeoCoordinate polarGeoCoordinate;
+      if (source.CoordinateSystem == CoordinateSystems.OSGB36 && destination == CoordinateSystems.WGS84)
+      {
+        polarGeoCoordinate = Converter.Convert(source, EllipseParameter.GetEllipseParameters(EllipseParameter.Ellipses.Airy1830), HelmertTransform.GetTransform(HelmertTransform.HelmertTransformType.OSGB36toWGS84), EllipseParameter.GetEllipseParameters(EllipseParameter.Ellipses.WGS84));
+      }
+      else
+      {
+        if (source.CoordinateSystem != CoordinateSystems.WGS84 || destination != CoordinateSystems.OSGB36)
+          throw new NotImplementedException("Requested source and destination are not currently supported");
+        polarGeoCoordinate = Converter.Convert(source, EllipseParameter.GetEllipseParameters(EllipseParameter.Ellipses.WGS84), HelmertTransform.GetTransform(HelmertTransform.HelmertTransformType.WGS84toOSGB36), EllipseParameter.GetEllipseParameters(EllipseParameter.Ellipses.Airy1830));
+      }
+      polarGeoCoordinate.AlignSigFigs(source);
+      return polarGeoCoordinate;
+    }
+
+    private static PolarGeoCoordinate Convert(PolarGeoCoordinate originalCoord, EllipseParameter e1, HelmertTransform t, EllipseParameter e2)
+    {
+      PolarGeoCoordinate polarGeoCoordinate = PolarGeoCoordinate.ChangeUnits(originalCoord, AngleUnit.Radians);
+      double num1 = Math.Sin(polarGeoCoordinate.Lat);
+      double num2 = Math.Cos(polarGeoCoordinate.Lat);
+      double num3 = Math.Sin(polarGeoCoordinate.Lon);
+      double num4 = Math.Cos(polarGeoCoordinate.Lon);
+      double height1 = polarGeoCoordinate.Height;
+      double num5 = (Math.Pow(e1.SemimajorAxis, 2.0) - Math.Pow(e1.SemiMinorAxis, 2.0)) / Math.Pow(e1.SemimajorAxis, 2.0);
+      double num6 = e1.SemimajorAxis / Math.Sqrt(1.0 - num5 * num1 * num1);
+      double num7 = (num6 + height1) * num2 * num4;
+      double num8 = (num6 + height1) * num2 * num3;
+      double num9 = ((1.0 - num5) * num6 + height1) * num1;
+      double tx = t.tx;
+      double ty = t.ty;
+      double tz = t.tz;
+      double num10 = t.rx / 3600.0 * Math.PI / 180.0;
+      double num11 = t.ry / 3600.0 * Math.PI / 180.0;
+      double num12 = t.rz / 3600.0 * Math.PI / 180.0;
+      double num13 = t.s / 1000000.0 + 1.0;
+      double x1 = tx + num7 * num13 - num8 * num12 + num9 * num11;
+      double y1 = ty + num7 * num12 + num8 * num13 - num9 * num10;
+      double y2 = tz - num7 * num11 + num8 * num10 + num9 * num13;
+      double semimajorAxis = e2.SemimajorAxis;
+      double num14 = 4.0 / e2.SemimajorAxis;
+      double num15 = (Math.Pow(e2.SemimajorAxis, 2.0) - Math.Pow(e2.SemiMinorAxis, 2.0)) / Math.Pow(e2.SemimajorAxis, 2.0);
+      double x2 = Math.Sqrt(x1 * x1 + y1 * y1);
+      double num16 = Math.Atan2(y2, x2 * (1.0 - num15));
+      for (double num17 = 2.0 * Math.PI; Math.Abs(num16 - num17) > num14; num16 = Math.Atan2(y2 + num15 * num6 * Math.Sin(num16), x2))
+      {
+        num6 = semimajorAxis / Math.Sqrt(1.0 - num15 * Math.Sin(num16) * Math.Sin(num16));
+        num17 = num16;
+      }
+      double original = Math.Atan2(y1, x1);
+      double height2 = x2 / Math.Cos(num16) - num6;
+      return new PolarGeoCoordinate(Converter.RadToDeg(num16), Converter.RadToDeg(original), height2, AngleUnit.Degrees, t.outputCoordinateSystem);
+    }
+
+    internal static double SetSigFigs(double d, int digits)
+    {
+      if (d == 0.0 || digits == 0)
+        return 0.0;
+      double num1 = d >= 0.0 ? Math.Pow(10.0, Math.Floor(Math.Log10(d)) + 1.0) : Math.Pow(10.0, Math.Floor(Math.Log10(-d)) + 1.0);
+      double num2 = Math.Round(d / num1, digits);
+      return (double) ((Decimal) num1 * (Decimal) num2);
+    }
+
+    internal static int GetSigFigs(double d)
+    {
+      if (d == 0.0)
+        return 0;
+      double num = d >= 0.0 ? Math.Pow(10.0, Math.Floor(Math.Log10(d)) + 1.0) : Math.Pow(10.0, Math.Floor(Math.Log10(-d)) + 1.0);
+      return Math.Abs(d / num).ToString().Trim('0').Length - 1;
+    }
+
+    internal static GridReference GeodesicToGridReference(PolarGeoCoordinate originalCoords)
+    {
+      PolarGeoCoordinate polarGeoCoordinate = PolarGeoCoordinate.ChangeUnits(originalCoords, AngleUnit.Radians);
+      double num1 = Math.Cos(polarGeoCoordinate.Lat);
+      double num2 = Math.Sin(polarGeoCoordinate.Lat);
+      double num3 = Converter._Airy1830.SemimajorAxis * Converter._NatGridScaleFactor / Math.Sqrt(1.0 - Converter._e2 * num2 * num2);
+      double num4 = Converter._Airy1830.SemimajorAxis * Converter._NatGridScaleFactor * (1.0 - Converter._e2) / Math.Pow(1.0 - Converter._e2 * num2 * num2, 1.5);
+      double num5 = num3 / num4 - 1.0;
+      double num6 = (1.0 + Converter._n + 1.25 * Converter._n2 + 1.25 * Converter._n3) * (polarGeoCoordinate.Lat - Converter._NatGridTrueOrigin.Lat);
+      double num7 = (3.0 * Converter._n + 3.0 * Converter._n * Converter._n + 2.625 * Converter._n3) * Math.Sin(polarGeoCoordinate.Lat - Converter._NatGridTrueOrigin.Lat) * Math.Cos(polarGeoCoordinate.Lat + Converter._NatGridTrueOrigin.Lat);
+      double num8 = (1.875 * Converter._n2 + 1.875 * Converter._n3) * Math.Sin(2.0 * (polarGeoCoordinate.Lat - Converter._NatGridTrueOrigin.Lat)) * Math.Cos(2.0 * (polarGeoCoordinate.Lat + Converter._NatGridTrueOrigin.Lat));
+      double num9 = 35.0 / 24.0 * Converter._n3 * Math.Sin(3.0 * (polarGeoCoordinate.Lat - Converter._NatGridTrueOrigin.Lat)) * Math.Cos(3.0 * (polarGeoCoordinate.Lat + Converter._NatGridTrueOrigin.Lat));
+      double num10 = Converter._Airy1830.SemiMinorAxis * Converter._NatGridScaleFactor * (num6 - num7 + num8 - num9);
+      double num11 = num1 * num1 * num1;
+      double num12 = num11 * num1 * num1;
+      double num13 = Math.Tan(polarGeoCoordinate.Lat) * Math.Tan(polarGeoCoordinate.Lat);
+      double num14 = num13 * num13;
+      double num15 = num10 + (double) Converter._NatNETrueOrigin.Northing;
+      double num16 = num3 / 2.0 * num2 * num1;
+      double num17 = num3 / 24.0 * num2 * num11 * (5.0 - num13 + 9.0 * num5);
+      double num18 = num3 / 720.0 * num2 * num12 * (61.0 - 58.0 * num13 + num14);
+      double num19 = num3 * num1;
+      double num20 = num3 / 6.0 * num11 * (num3 / num4 - num13);
+      double num21 = num3 / 120.0 * num12 * (5.0 - 18.0 * num13 + num14 + 14.0 * num5 - 58.0 * num13 * num5);
+      double num22 = polarGeoCoordinate.Lon - Converter._NatGridTrueOrigin.Lon;
+      double num23 = num22 * num22;
+      double num24 = num23 * num22;
+      double num25 = num24 * num22;
+      double num26 = num25 * num22;
+      double num27 = num26 * num22;
+      double num28 = num15 + num16 * num23 + num17 * num25 + num18 * num27;
+      return new GridReference((long) (int) ((double) Converter._NatNETrueOrigin.Easting + num19 * num22 + num20 * num24 + num21 * num26), (long) (int) num28);
+    }
+
+    internal static PolarGeoCoordinate GridReferenceToGeodesic(GridReference g)
+    {
+      double num1 = Converter._NatGridTrueOrigin.Lat;
+      double num2 = 0.0;
+      do
+      {
+        num1 = ((double) (g.Northing - Converter._NatNETrueOrigin.Northing) - num2) / (Converter._Airy1830.SemimajorAxis * Converter._NatGridScaleFactor) + num1;
+        double num3 = (1.0 + Converter._n + 1.25 * Converter._n2 + 1.25 * Converter._n3) * (num1 - Converter._NatGridTrueOrigin.Lat);
+        double num4 = (3.0 * Converter._n + 3.0 * Converter._n * Converter._n + 2.625 * Converter._n3) * Math.Sin(num1 - Converter._NatGridTrueOrigin.Lat) * Math.Cos(num1 + Converter._NatGridTrueOrigin.Lat);
+        double num5 = (1.875 * Converter._n2 + 1.875 * Converter._n3) * Math.Sin(2.0 * (num1 - Converter._NatGridTrueOrigin.Lat)) * Math.Cos(2.0 * (num1 + Converter._NatGridTrueOrigin.Lat));
+        double num6 = 35.0 / 24.0 * Converter._n3 * Math.Sin(3.0 * (num1 - Converter._NatGridTrueOrigin.Lat)) * Math.Cos(3.0 * (num1 + Converter._NatGridTrueOrigin.Lat));
+        num2 = Converter._Airy1830.SemiMinorAxis * Converter._NatGridScaleFactor * (num3 - num4 + num5 - num6);
+      }
+      while ((double) (g.Northing - Converter._NatNETrueOrigin.Northing) - num2 >= 1E-05);
+      double num7 = Math.Cos(num1);
+      double num8 = Math.Sin(num1);
+      double num9 = Converter._Airy1830.SemimajorAxis * Converter._NatGridScaleFactor / Math.Sqrt(1.0 - Converter._e2 * num8 * num8);
+      double num10 = Converter._Airy1830.SemimajorAxis * Converter._NatGridScaleFactor * (1.0 - Converter._e2) / Math.Pow(1.0 - Converter._e2 * num8 * num8, 1.5);
+      double num11 = num9 / num10 - 1.0;
+      double num12 = Math.Tan(num1);
+      double num13 = num12 * num12;
+      double num14 = num13 * num13;
+      double num15 = num14 * num13;
+      double num16 = 1.0 / num7;
+      double num17 = num9 * num9 * num9;
+      double num18 = num17 * num9 * num9;
+      double num19 = num18 * num9 * num9;
+      double num20 = num12 / (2.0 * num10 * num9);
+      double num21 = num12 / (24.0 * num10 * num17) * (5.0 + 3.0 * num13 + num11 - 9.0 * num13 * num11);
+      double num22 = num12 / (720.0 * num10 * num18) * (61.0 + 90.0 * num13 + 45.0 * num14);
+      double num23 = num16 / num9;
+      double num24 = num16 / (6.0 * num17) * (num9 / num10 + 2.0 * num13);
+      double num25 = num16 / (120.0 * num18) * (5.0 + 28.0 * num13 + 24.0 * num14);
+      double num26 = num16 / (5040.0 * num19) * (61.0 + 662.0 * num13 + 1320.0 * num14 + 720.0 * num15);
+      double num27 = (double) (g.Easting - Converter._NatNETrueOrigin.Easting);
+      double num28 = num27 * num27;
+      double num29 = num28 * num27;
+      double num30 = num28 * num28;
+      double num31 = num29 * num28;
+      double num32 = num30 * num28;
+      double num33 = num31 * num28;
+      PolarGeoCoordinate polarGeoCoordinate = PolarGeoCoordinate.ChangeUnits(new PolarGeoCoordinate(num1 - num20 * num28 + num21 * num30 - num22 * num32, Converter._NatGridTrueOrigin.Lon + num23 * num27 - num24 * num29 + num25 * num31 - num26 * num33, 0.0, AngleUnit.Radians, CoordinateSystems.OSGB36), AngleUnit.Degrees);
+      polarGeoCoordinate.SetSigFigs(7);
+      return polarGeoCoordinate;
+    }
+
+    internal static double RadToDeg(double original)
+    {
+      return original / (2.0 * Math.PI) * 360.0;
+    }
+
+    internal static double DegToRad(double original)
+    {
+      return original / 360.0 * (2.0 * Math.PI);
+    }
+  }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[EllipseParameter.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[// Decompiled with JetBrains decompiler
+// Type: TDPG.GeoCoordConversion.EllipseParameter
+// Assembly: GeoCoordConversion, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4BF73D91-F20E-492B-89D2-82533B8FA2C8
+// Assembly location: C:\Users\Matt\Downloads\GeoCoordConversion_1_0_1_0.dll
+
+using System.Collections.Generic;
+
+namespace TDPG.GeoCoordConversion
+{
+  internal class EllipseParameter
+  {
+    private static Dictionary<EllipseParameter.Ellipses, EllipseParameter> m_Transforms = new Dictionary<EllipseParameter.Ellipses, EllipseParameter>()
+    {
+      {
+        EllipseParameter.Ellipses.WGS84,
+        new EllipseParameter(6378137.0, 6356752.3142, 0.00335281066474748)
+      },
+      {
+        EllipseParameter.Ellipses.Airy1830,
+        new EllipseParameter(6377563.396, 6356256.91, 0.00334085064149708)
+      },
+      {
+        EllipseParameter.Ellipses.Airy1849,
+        new EllipseParameter(6377340.189, 6356034.447, 0.00334085064149708)
+      }
+    };
+
+    internal double SemimajorAxis { get; set; }
+
+    internal double SemiMinorAxis { get; set; }
+
+    internal double Eccentricity { get; set; }
+
+    internal EllipseParameter(double semimajorAxis, double semiMinorAxis, double eccentricity)
+    {
+      this.SemiMinorAxis = semiMinorAxis;
+      this.SemimajorAxis = semimajorAxis;
+      this.Eccentricity = eccentricity;
+    }
+
+    internal static EllipseParameter GetEllipseParameters(EllipseParameter.Ellipses type)
+    {
+      return EllipseParameter.m_Transforms[type];
+    }
+
+    internal enum Ellipses
+    {
+      WGS84,
+      Airy1830,
+      Airy1849,
+    }
+  }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[CoordinateSystems.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[// Decompiled with JetBrains decompiler
+// Type: TDPG.GeoCoordConversion.CoordinateSystems
+// Assembly: GeoCoordConversion, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4BF73D91-F20E-492B-89D2-82533B8FA2C8
+// Assembly location: C:\Users\Matt\Downloads\GeoCoordConversion_1_0_1_0.dll
+
+namespace TDPG.GeoCoordConversion
+{
+  public enum CoordinateSystems
+  {
+    WGS84,
+    OSGB36,
+  }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[PolarGeoCoordinate.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[// Decompiled with JetBrains decompiler
+// Type: TDPG.GeoCoordConversion.PolarGeoCoordinate
+// Assembly: GeoCoordConversion, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4BF73D91-F20E-492B-89D2-82533B8FA2C8
+// Assembly location: C:\Users\Matt\Downloads\GeoCoordConversion_1_0_1_0.dll
+
+using System;
+
+namespace TDPG.GeoCoordConversion
+{
+  public class PolarGeoCoordinate
+  {
+    public double Lat { get; set; }
+
+    public double Lon { get; set; }
+
+    public double Height { get; set; }
+
+    public AngleUnit Units { get; private set; }
+
+    public CoordinateSystems CoordinateSystem { get; private set; }
+
+    public PolarGeoCoordinate(double lat, double lon, double height, AngleUnit units, CoordinateSystems coordinateSystem)
+    {
+      this.Lat = lat;
+      this.Lon = lon;
+      this.Height = height;
+      this.Units = units;
+      this.CoordinateSystem = coordinateSystem;
+    }
+
+    public static PolarGeoCoordinate ChangeUnits(PolarGeoCoordinate original, AngleUnit changeTo)
+    {
+      if (original.Units == changeTo)
+        return new PolarGeoCoordinate(original.Lat, original.Lon, original.Height, original.Units, original.CoordinateSystem);
+      if (original.Units == AngleUnit.Degrees && changeTo == AngleUnit.Radians)
+        return new PolarGeoCoordinate(Converter.DegToRad(original.Lat), Converter.DegToRad(original.Lon), original.Height, AngleUnit.Radians, original.CoordinateSystem);
+      if (original.Units == AngleUnit.Radians && changeTo == AngleUnit.Degrees)
+        return new PolarGeoCoordinate(Converter.RadToDeg(original.Lat), Converter.RadToDeg(original.Lon), original.Height, AngleUnit.Degrees, original.CoordinateSystem);
+      throw new NotImplementedException("Invalid conversion requested");
+    }
+
+    public static PolarGeoCoordinate ChangeCoordinateSystem(PolarGeoCoordinate original, CoordinateSystems destination)
+    {
+      return Converter.Convert(original, destination);
+    }
+
+    public static GridReference ChangeToGridReference(PolarGeoCoordinate original)
+    {
+      return Converter.GeodesicToGridReference(original.CoordinateSystem == CoordinateSystems.OSGB36 ? original : PolarGeoCoordinate.ChangeCoordinateSystem(original, CoordinateSystems.OSGB36));
+    }
+
+    public bool IsTheSameAs(PolarGeoCoordinate compareTo, bool ignoreFinalDigit, bool alignSigFigs)
+    {
+      if (alignSigFigs)
+        this.AlignSigFigs(compareTo);
+      if (!ignoreFinalDigit)
+        return this.IsTheSameAs(compareTo);
+      compareTo = PolarGeoCoordinate.ReduceSigFigsBy1(compareTo);
+      return PolarGeoCoordinate.ReduceSigFigsBy1(this).IsTheSameAs(compareTo);
+    }
+
+    public bool IsTheSameAs(PolarGeoCoordinate compareTo)
+    {
+      return compareTo.CoordinateSystem == this.CoordinateSystem && compareTo.Height == this.Height && (compareTo.Lat == this.Lat && compareTo.Lon == this.Lon) && compareTo.Units == this.Units;
+    }
+
+    internal static PolarGeoCoordinate ReduceSigFigsBy1(PolarGeoCoordinate source)
+    {
+      return new PolarGeoCoordinate(Converter.SetSigFigs(source.Lat, Converter.GetSigFigs(source.Lat) - 1), Converter.SetSigFigs(source.Lon, Converter.GetSigFigs(source.Lon) - 1), Converter.SetSigFigs(source.Height, Converter.GetSigFigs(source.Height) - 1), source.Units, source.CoordinateSystem);
+    }
+
+    internal void AlignSigFigs(PolarGeoCoordinate source)
+    {
+      int sigFigs1 = Converter.GetSigFigs(source.Lat);
+      int sigFigs2 = Converter.GetSigFigs(this.Lat);
+      this.Lat = Converter.SetSigFigs(this.Lat, sigFigs2 < sigFigs1 ? sigFigs2 : sigFigs1);
+      int sigFigs3 = Converter.GetSigFigs(source.Lon);
+      int sigFigs4 = Converter.GetSigFigs(this.Lon);
+      this.Lon = Converter.SetSigFigs(this.Lon, sigFigs4 < sigFigs3 ? sigFigs4 : sigFigs3);
+      int sigFigs5 = Converter.GetSigFigs(source.Height);
+      int sigFigs6 = Converter.GetSigFigs(this.Height);
+      this.Height = Converter.SetSigFigs(this.Height, sigFigs6 < sigFigs5 ? sigFigs6 : sigFigs5);
+    }
+
+    internal void SetSigFigs(int figs)
+    {
+      this.Lat = Converter.SetSigFigs(this.Lat, figs);
+      this.Lon = Converter.SetSigFigs(this.Lon, figs);
+      this.Height = Converter.SetSigFigs(this.Height, figs);
+    }
+  }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[GridReference.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[// Decompiled with JetBrains decompiler
+// Type: TDPG.GeoCoordConversion.GridReference
+// Assembly: GeoCoordConversion, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4BF73D91-F20E-492B-89D2-82533B8FA2C8
+// Assembly location: C:\Users\Matt\Downloads\GeoCoordConversion_1_0_1_0.dll
+
+namespace TDPG.GeoCoordConversion
+{
+  public class GridReference
+  {
+    public long Northing { get; set; }
+
+    public long Easting { get; set; }
+
+    public GridReference(long easting, long northing)
+    {
+      this.Northing = northing;
+      this.Easting = easting;
+    }
+
+    public static PolarGeoCoordinate ChangeToPolarGeo(GridReference original)
+    {
+      return Converter.GridReferenceToGeodesic(original);
+    }
+
+    public bool IsTheSameAs(GridReference compareTo)
+    {
+      return compareTo.Northing == this.Northing && compareTo.Easting == this.Easting;
+    }
+
+    public bool IsTheSameAs(GridReference compareTo, bool ignoreFinalDigit)
+    {
+      if (!ignoreFinalDigit)
+        return this.IsTheSameAs(compareTo);
+      this.AlignSigFigs(compareTo);
+      return GridReference.ReduceSigFigsBy1(this).IsTheSameAs(GridReference.ReduceSigFigsBy1(compareTo));
+    }
+
+    internal void AlignSigFigs(GridReference source)
+    {
+      int sigFigs1 = Converter.GetSigFigs((double) source.Easting);
+      int sigFigs2 = Converter.GetSigFigs((double) this.Easting);
+      this.Easting = (long) (int) Converter.SetSigFigs((double) this.Easting, sigFigs2 < sigFigs1 ? sigFigs2 : sigFigs1);
+      source.Easting = (long) (int) Converter.SetSigFigs((double) source.Easting, sigFigs2 < sigFigs1 ? sigFigs2 : sigFigs1);
+      int sigFigs3 = Converter.GetSigFigs((double) source.Northing);
+      int sigFigs4 = Converter.GetSigFigs((double) this.Northing);
+      this.Northing = (long) (int) Converter.SetSigFigs((double) this.Northing, sigFigs4 < sigFigs3 ? sigFigs4 : sigFigs3);
+      source.Northing = (long) (int) Converter.SetSigFigs((double) source.Northing, sigFigs4 < sigFigs3 ? sigFigs4 : sigFigs3);
+    }
+
+    internal static GridReference ReduceSigFigsBy1(GridReference original)
+    {
+      double num = Converter.SetSigFigs((double) original.Northing, Converter.GetSigFigs((double) original.Northing) - 1);
+      return new GridReference((long) (int) Converter.SetSigFigs((double) original.Easting, Converter.GetSigFigs((double) original.Easting) - 1), (long) (int) num);
+    }
+  }
+}
+]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[HelmertTransform.cs]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[// Decompiled with JetBrains decompiler
+// Type: TDPG.GeoCoordConversion.HelmertTransform
+// Assembly: GeoCoordConversion, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4BF73D91-F20E-492B-89D2-82533B8FA2C8
+// Assembly location: C:\Users\Matt\Downloads\GeoCoordConversion_1_0_1_0.dll
+
+using System.Collections.Generic;
+
+namespace TDPG.GeoCoordConversion
+{
+  internal class HelmertTransform
+  {
+    private static Dictionary<HelmertTransform.HelmertTransformType, HelmertTransform> m_Transforms = new Dictionary<HelmertTransform.HelmertTransformType, HelmertTransform>()
+    {
+      {
+        HelmertTransform.HelmertTransformType.WGS84toOSGB36,
+        new HelmertTransform(-446.448, 125.157, -542.06, -0.1502, -0.247, -0.8421, 20.4894, CoordinateSystems.OSGB36)
+      },
+      {
+        HelmertTransform.HelmertTransformType.OSGB36toWGS84,
+        new HelmertTransform(446.448, -125.157, 542.06, 0.1502, 0.247, 0.8421, -20.4894, CoordinateSystems.WGS84)
+      }
+    };
+
+    internal double tx { get; private set; }
+
+    internal double ty { get; private set; }
+
+    internal double tz { get; private set; }
+
+    internal double rx { get; private set; }
+
+    internal double ry { get; private set; }
+
+    internal double rz { get; private set; }
+
+    internal double s { get; private set; }
+
+    internal CoordinateSystems outputCoordinateSystem { get; private set; }
+
+    private HelmertTransform(double _tx, double _ty, double _tz, double _rx, double _ry, double _rz, double _s, CoordinateSystems _outputCoordinateSystem)
+    {
+      this.tx = _tx;
+      this.ty = _ty;
+      this.tz = _tz;
+      this.rx = _rx;
+      this.ry = _ry;
+      this.rz = _rz;
+      this.s = _s;
+      this.outputCoordinateSystem = _outputCoordinateSystem;
+    }
+
+    public static HelmertTransform GetTransform(HelmertTransform.HelmertTransformType type)
+    {
+      return HelmertTransform.m_Transforms[type];
+    }
+
+    public enum HelmertTransformType
+    {
+      WGS84toOSGB36,
+      OSGB36toWGS84,
+    }
+  }
+}
+]]></arrayElement>
+                              </arrayElements>
+                            </property>
+                            <property
+                              dataType="System.String"
+                              description="Stores the binary representation of the component"
+                              isArray="true"
+                              name="BinaryCode"
+                              state="cdata">
+                              <arrayElements
+                                arrayElementCount="2">
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[SC_278b31afde6045dab316fedb6367462b.dll]]></arrayElement>
+                                <arrayElement
+                                  dataType="System.String"><![CDATA[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
+OQAACgoGgC4AAAR+LgAABCoafi8AAAQqHgKALwAABCoafjAAAAQqLnNdAAAGgDAAAAQqHgIoOwAA
+CioAAAAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwg
+bXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tl
+bj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAA
+AAAAAAAAAAAAUEFEUEFEULQAAABCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAABE
+EAAAI34AALAQAAB4DwAAI1N0cmluZ3MAAAAAKCAAANQBAAAjVVMA/CEAABAAAAAjR1VJRAAAAAwi
+AACgAwAAI0Jsb2IAAAAAAAAAAgAAAVcdogkJAwAAAPolMwAWAAABAAAAJwAAABEAAAAwAAAAXgAA
+AFYAAAA7AAAACQAAAEUAAAAMAAAABwAAAB0AAAAwAAAAAgAAAAEAAAAEAAAAAQAAAAIAAAAAAAoA
+AQAAAAAABgBfAVgBBgBkAVgBCgCpAYgBCgC5AYgBDgDbAcYBBgDkAskCEgCJBogBCgCYBogBBgBo
+CVcJBgCZCYQJBgCMC3ILBgC3C6ULBgDOC6ULBgDrC6ULBgAKDKULBgAjDKULBgA8DKULBgBXDKUL
+BgByDKULBgCLDKULBgDEDKQMBgDkDKQMBgAmDVgBBgA+DVgBBgBwDVgBBgCQDVgBBgCgDVgBBgCl
+DVgBBgDHDaQMBgDvDVgBCgAYDogBBgBPDlgBBgBnDlgBBgCUDoEOBgCxDlgBBgC2DlgBBgDaDqUL
+DgAGD/AODgAfD/AOAAAAAAEAAAAAAAEAAQABAQAAMgA8AAUAAQABAIABEABUADwACQAEAAEAAQEA
+AF4APAAFAAwACgAAABAAcAA8AAkADwAKAAUBAACBAAAABQATABMAAQAQAIoAPAAJABcAEwAAABAA
+mAA8AAkAGQAdAAIBAACpAAAABQAiADAAAQAQAL4AAAANACUAMAABABAAzAAAACgAJwA0AAEAEADX
+AAAAEQAnADgAAQAQAOQAAAAJACcAQwABABAA8AAAAAkAKABEAAEAEAD6ADwACQApAEUAAAAQAA0B
+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
+AAABAFkKAAABAFkKAAABAFkKAAABAFkKAAABAFkKAAABALkKAAACAL0KAAADAMEKAAAEAMUKAAAF
+AMkKAAAGAM0KAAAHANEKAAAIANQKAAABAIgKAAABAOwKAAACAPQKAAADAP4KAAAEAAULAAABAP4K
+AAABAA8LAAABAA8LAAABAP4KAAACABMLAAADAAULAAABAFkKAAABAFkKAAABAFkKAAABAFkKAAAB
+ACcLAAABACcLAAABAFkKAAABAFkKAAABAFkKAAABAFkKAAABAFkKAAABADELAAACADULAAADADkL
+AAAEAEALAAAFAEYLAAABAFAKAAACAFcLAAABAFAKAAACABQKAAABAFAKAAABAJ4KAAACAKgKAAAD
+AGALAAABAJ4KAAABAA0KAAABAA0KAAABAG0LAAABAFkKWQBoA70BYQBoA70BaQBoA70BcQBoA70B
+eQBoA70BgQBoA70BiQBoA70BkQBoA70BmQBoA70BoQBoA70BqQBoA4MBsQBoAwMBuQBoA70BwQBD
+DWIAwQBHDWIAwQBLDccBwQBPDWIAwQBUDccBwQBaDWIAwQBeDWIAwQBkDWIAwQBqDUkAyQB4De4B
+yQCEDfQByQB4Df0B0QCXDQgC4QCsDQwC4QCxDSEBwQC8DWIA6QBoAwMBEQBoAwMBDADiDUwCDABo
+AwMBDADrDVMCFADiDUwCFABoAwMBFADrDVMCGQBoAwMB4QAADoUCGQAHDowC+QBoAwMBGQDeBgMB
+GQDpBgMBIQBoAxcBIQD+CpsCIQATC58COQA/DqMCIQBIDqgCIQBWDq0CIQBfDoMBCQFoA70BIQB9
+ByUBIQCFByUBEQFoAwMBGQHIDrwCGQHjDsUCSQBoA8sCMQFoA9gCKQBoAwMBCAAIABoACAAMAB8A
+CAA0ABoACAA4AB8ACABQABoACABUAB8ACABYAJQACACMABoACACQAB8ALgAzADADLgA7AF8DLgBD
+AFkDLgAjAFkDLgBbAHYDLgBjAH8DLgArAFkDLgALAOgCLgATADADLgAbAFkDQAHzAB8AYAHzAB8A
+YwFLAR8AgAHzAB8AoAHzAB8AwAHzAB8A4AHzAB8AAQLzAB8AAwKzAR8AIQLzAB8AQQLzAB8AYALz
+AB8AgALzAB8AoALzAB8AwALzAB8A4QLzAB8AAQPzAB8AQQPzAB8AYQPzAB8AaQPTAd8CgQPzAB8A
+iQPTAd8CoAPzAB8AoQPzAB8AwAPzAB8AwQPzAB8A4APzAB8A4QPzAB8AAATzAB8AAQTzAB8AIATz
+AB8AIQTzAB8AQATzAB8AYATzAB8AgATzAB8AoATzAB8AwATzAB8A4ATzAB8AAAXzAB8AIAXzAB8A
+IQXzAB8AQAXzAB8AQQXzAB8AYAXzAB8AYQXzAB8AgAXzAB8AgQXzAB8AoQXzAB8AAQbzAB8AoAjz
+AB8AwAjzAB8A4AjzAB8AAAnzAB8AIAnzAB8AQAnzAB8AYAnzAB8AgAnzAB8AoAnzAB8AwAnzAB8A
+wgHNAQMCEgIZAlsCZgJtAnoCkgKzAtMCBQABAAcABAAIAAYADAAOAA8AFgAQABsAEQAdAAAA3wOM
+AAAA7QOMAAAA+wOMAAAAugTFAAAAwwTFAAAAIQaMAAAAJAaMAAAAJwaMAAAAKgaMAAAALQaMAAAA
+MAaMAAAAMwaMAAAANQbyAAAAkQczAQAAmgc3AQAAqgczAQAAtAc3AQAAxQc7AQAAzgc3AQAA3gc7
+AQAA6Ac3AQAAMQmMAAAANQmMAAAAOQmMAAAAQAmIAQAARgnyAAAAaAmlAQAA4QmqAQAABQq4AQIA
+CgADAAEACwADAAIADAAFAAEADQAFAAIADgAHAAEADwAHAAEAFAAJAAIAEwAJAAIAFQALAAEAFgAL
+AAIAHQANAAEAHgANAAEAIAAPAAIAHwAPAAIAIQARAAEAIgARAAIAIwATAAEAJAATAAEAJgAVAAIA
+JQAVAAIAJwAXAAEAKAAXAAEAKgAZAAIAKQAZAAEALAAbAAIAKwAbAAIAOQAdAAIAOgAfAAIAOwAh
+AAIAPAAjAAEAPQAlAAEAPgAnAAEAPwApAAEAQAArAAEARgAtAAIARQAtAAEASAAvAAIARwAvAAIA
+SQAxAAEASgAxAAEATAAzAAIASwAzAAIATQA1AAEATgA1AAIAWQA3AAIAWgA5AAEAWwA5AAIAXAA7
+AEMCcQIEgAAAAQAAAPEVg5wAAAAAAAACDQAABAAAAAAAAAAAAAAAAQBPAQAAAAALAAAAAAAAAAAA
+AAAKAGsBAAAAAAQAAAAAAAAAAAAAAAEAWAEAAAAACwAAAAAAAAAAAAAACgBoBgAAAAAAAAAAAQAA
+ADQPAAAGAAUACQAIAAAAAAAAPE1vZHVsZT4AU0NfMjc4YjMxYWZkZTYwNDVkYWIzMTZmZWRiNjM2
+NzQ2MmIuZGxsAEFuZ2xlVW5pdABURFBHLkdlb0Nvb3JkQ29udmVyc2lvbgBDb252ZXJ0ZXIAQ29v
+cmRpbmF0ZVN5c3RlbXMARWxsaXBzZVBhcmFtZXRlcgBFbGxpcHNlcwBHcmlkUmVmZXJlbmNlAEhl
+bG1lcnRUcmFuc2Zvcm0ASGVsbWVydFRyYW5zZm9ybVR5cGUAVXNlckNvbXBvbmVudABTY3JpcHRN
+YWluAElucHV0MEJ1ZmZlcgBDb25uZWN0aW9ucwBWYXJpYWJsZXMAUG9sYXJHZW9Db29yZGluYXRl
+AFJlc291cmNlcwBTQ18yNzhiMzFhZmRlNjA0NWRhYjMxNmZlZGI2MzY3NDYyYi5Qcm9wZXJ0aWVz
+AFNldHRpbmdzAG1zY29ybGliAFN5c3RlbQBFbnVtAE9iamVjdABNaWNyb3NvZnQuU3FsU2VydmVy
+LlR4U2NyaXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAFNjcmlwdENvbXBvbmVu
+dABTY3JpcHRCdWZmZXIAU3lzdGVtLkNvbmZpZ3VyYXRpb24AQXBwbGljYXRpb25TZXR0aW5nc0Jh
+c2UAdmFsdWVfXwBSYWRpYW5zAERlZ3JlZXMAX05hdEdyaWRTY2FsZUZhY3RvcgBfTmF0TkVUcnVl
+T3JpZ2luAF9OYXRHcmlkVHJ1ZU9yaWdpbgBfQWlyeTE4MzAAX2UyAF9uAF9uMgBfbjMAQ29udmVy
+dABTZXRTaWdGaWdzAEdldFNpZ0ZpZ3MAR2VvZGVzaWNUb0dyaWRSZWZlcmVuY2UAR3JpZFJlZmVy
+ZW5jZVRvR2VvZGVzaWMAUmFkVG9EZWcARGVnVG9SYWQAV0dTODQAT1NHQjM2AFN5c3RlbS5Db2xs
+ZWN0aW9ucy5HZW5lcmljAERpY3Rpb25hcnlgMgBtX1RyYW5zZm9ybXMAZ2V0X1NlbWltYWpvckF4
+aXMAc2V0X1NlbWltYWpvckF4aXMAZ2V0X1NlbWlNaW5vckF4aXMAc2V0X1NlbWlNaW5vckF4aXMA
+Z2V0X0VjY2VudHJpY2l0eQBzZXRfRWNjZW50cmljaXR5AC5jdG9yAEdldEVsbGlwc2VQYXJhbWV0
+ZXJzADxTZW1pbWFqb3JBeGlzPmtfX0JhY2tpbmdGaWVsZAA8U2VtaU1pbm9yQXhpcz5rX19CYWNr
+aW5nRmllbGQAPEVjY2VudHJpY2l0eT5rX19CYWNraW5nRmllbGQAU2VtaW1ham9yQXhpcwBTZW1p
+TWlub3JBeGlzAEVjY2VudHJpY2l0eQBBaXJ5MTgzMABBaXJ5MTg0OQBnZXRfTm9ydGhpbmcAc2V0
+X05vcnRoaW5nAGdldF9FYXN0aW5nAHNldF9FYXN0aW5nAENoYW5nZVRvUG9sYXJHZW8ASXNUaGVT
+YW1lQXMAQWxpZ25TaWdGaWdzAFJlZHVjZVNpZ0ZpZ3NCeTEAPE5vcnRoaW5nPmtfX0JhY2tpbmdG
+aWVsZAA8RWFzdGluZz5rX19CYWNraW5nRmllbGQATm9ydGhpbmcARWFzdGluZwBnZXRfdHgAc2V0
+X3R4AGdldF90eQBzZXRfdHkAZ2V0X3R6AHNldF90egBnZXRfcngAc2V0X3J4AGdldF9yeQBzZXRf
+cnkAZ2V0X3J6AHNldF9yegBnZXRfcwBzZXRfcwBnZXRfb3V0cHV0Q29vcmRpbmF0ZVN5c3RlbQBz
+ZXRfb3V0cHV0Q29vcmRpbmF0ZVN5c3RlbQBHZXRUcmFuc2Zvcm0APHR4PmtfX0JhY2tpbmdGaWVs
+ZAA8dHk+a19fQmFja2luZ0ZpZWxkADx0ej5rX19CYWNraW5nRmllbGQAPHJ4PmtfX0JhY2tpbmdG
+aWVsZAA8cnk+a19fQmFja2luZ0ZpZWxkADxyej5rX19CYWNraW5nRmllbGQAPHM+a19fQmFja2lu
+Z0ZpZWxkADxvdXRwdXRDb29yZGluYXRlU3lzdGVtPmtfX0JhY2tpbmdGaWVsZAB0eAB0eQB0egBy
+eAByeQByegBzAG91dHB1dENvb3JkaW5hdGVTeXN0ZW0AV0dTODR0b09TR0IzNgBPU0dCMzZ0b1dH
+Uzg0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AFBpcGVsaW5lQnVmZmVyAE91dHB1
+dE5hbWVNYXAAUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXQASW5wdXQwX1Byb2Nlc3NJ
+bnB1dFJvdwBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAGdldF9FYXN0aW5ncwBnZXRfRWFzdGluZ3Nf
+SXNOdWxsAGdldF9Ob3J0aGluZ3MAZ2V0X05vcnRoaW5nc19Jc051bGwAc2V0X0xhdGl0dWRlAHNl
+dF9MYXRpdHVkZV9Jc051bGwAc2V0X0xvbmdpdHVkZQBzZXRfTG9uZ2l0dWRlX0lzTnVsbABOZXh0
+Um93AEVuZE9mUm93c2V0AEVhc3RpbmdzAEVhc3RpbmdzX0lzTnVsbABOb3J0aGluZ3MATm9ydGhp
+bmdzX0lzTnVsbABMYXRpdHVkZQBMYXRpdHVkZV9Jc051bGwATG9uZ2l0dWRlAExvbmdpdHVkZV9J
+c051bGwAUGFyZW50Q29tcG9uZW50AGdldF9MYXQAc2V0X0xhdABnZXRfTG9uAHNldF9Mb24AZ2V0
+X0hlaWdodABzZXRfSGVpZ2h0AGdldF9Vbml0cwBzZXRfVW5pdHMAZ2V0X0Nvb3JkaW5hdGVTeXN0
+ZW0Ac2V0X0Nvb3JkaW5hdGVTeXN0ZW0AQ2hhbmdlVW5pdHMAQ2hhbmdlQ29vcmRpbmF0ZVN5c3Rl
+bQBDaGFuZ2VUb0dyaWRSZWZlcmVuY2UAPExhdD5rX19CYWNraW5nRmllbGQAPExvbj5rX19CYWNr
+aW5nRmllbGQAPEhlaWdodD5rX19CYWNraW5nRmllbGQAPFVuaXRzPmtfX0JhY2tpbmdGaWVsZAA8
+Q29vcmRpbmF0ZVN5c3RlbT5rX19CYWNraW5nRmllbGQATGF0AExvbgBIZWlnaHQAVW5pdHMAQ29v
+cmRpbmF0ZVN5c3RlbQBTeXN0ZW0uUmVzb3VyY2VzAFJlc291cmNlTWFuYWdlcgByZXNvdXJjZU1h
+bgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBDdWx0dXJlSW5mbwByZXNvdXJjZUN1bHR1cmUAZ2V0X1Jl
+c291cmNlTWFuYWdlcgBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBDdWx0dXJlAGRlZmF1bHRJbnN0
+YW5jZQBnZXRfRGVmYXVsdABEZWZhdWx0AHNvdXJjZQBkZXN0aW5hdGlvbgBvcmlnaW5hbENvb3Jk
+AGUxAHQAZTIAZABkaWdpdHMAb3JpZ2luYWxDb29yZHMAZwBvcmlnaW5hbAB2YWx1ZQBzZW1pbWFq
+b3JBeGlzAHNlbWlNaW5vckF4aXMAZWNjZW50cmljaXR5AHR5cGUAZWFzdGluZwBub3J0aGluZwBj
+b21wYXJlVG8AaWdub3JlRmluYWxEaWdpdABfdHgAX3R5AF90egBfcngAX3J5AF9yegBfcwBfb3V0
+cHV0Q29vcmRpbmF0ZVN5c3RlbQBJbnB1dElEAElucHV0TmFtZQBCdWZmZXIAT3V0cHV0TWFwAFJv
+dwBCdWZmZXJDb2x1bW5JbmRleGVzAENvbXBvbmVudABsYXQAbG9uAGhlaWdodAB1bml0cwBjb29y
+ZGluYXRlU3lzdGVtAGNoYW5nZVRvAGFsaWduU2lnRmlncwBmaWdzAFN5c3RlbS5SdW50aW1lLlZl
+cnNpb25pbmcAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAFN5c3RlbS5SZWZsZWN0aW9uAEFzc2Vt
+Ymx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBBc3NlbWJseUNv
+bmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAEFzc2VtYmx5UHJv
+ZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFy
+a0F0dHJpYnV0ZQBBc3NlbWJseUN1bHR1cmVBdHRyaWJ1dGUAQXNzZW1ibHlWZXJzaW9uQXR0cmli
+dXRlAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAQ29tcGlsYXRpb25SZWxheGF0aW9u
+c0F0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBTQ18yNzhiMzFhZmRlNjA0
+NWRhYjMxNmZlZGI2MzY3NDYyYgBOb3RJbXBsZW1lbnRlZEV4Y2VwdGlvbgBNYXRoAFNpbgBDb3MA
+UG93AFNxcnQAQXRhbjIAQWJzAExvZzEwAEZsb29yAFJvdW5kAERlY2ltYWwAb3BfRXhwbGljaXQA
+b3BfTXVsdGlwbHkARG91YmxlAFRvU3RyaW5nAENoYXIAU3RyaW5nAFRyaW0AZ2V0X0xlbmd0aABU
+YW4ALmNjdG9yAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAGdldF9JdGVtAEFkZABTdHJpbmdD
+b21wYXJpc29uAEVxdWFscwBHZXRDb2x1bW5JbmRleGVzAFNTSVNTY3JpcHRDb21wb25lbnRFbnRy
+eVBvaW50QXR0cmlidXRlAEdldEludDMyAElzTnVsbABTaW5nbGUAc2V0X0l0ZW0AU2V0TnVsbABJ
+bnZhbGlkT3BlcmF0aW9uRXhjZXB0aW9uAFN5c3RlbS5EaWFnbm9zdGljcwBEZWJ1Z2dlck5vblVz
+ZXJDb2RlQXR0cmlidXRlAFR5cGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUA
+QXNzZW1ibHkAZ2V0X0Fzc2VtYmx5AFN5c3RlbS5Db21wb25lbnRNb2RlbABFZGl0b3JCcm93c2Fi
+bGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlU3RhdGUAU0NfMjc4YjMxYWZkZTYwNDVkYWIzMTZm
+ZWRiNjM2NzQ2MmIuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAAAAeVIAZQBxAHUAZQBz
+AHQAZQBkACAAcwBvAHUAcgBjAGUAIABhAG4AZAAgAGQAZQBzAHQAaQBuAGEAdABpAG8AbgAgAGEA
+cgBlACAAbgBvAHQAIABjAHUAcgByAGUAbgB0AGwAeQAgAHMAdQBwAHAAbwByAHQAZQBkAAAPSQBu
+AHAAdQB0ACAAMAAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0
+ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYA
+YQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AADlJ
+AG4AdgBhAGwAaQBkACAAYwBvAG4AdgBlAHIAcwBpAG8AbgAgAHIAZQBxAHUAZQBzAHQAZQBkAABx
+UwBDAF8AMgA3ADgAYgAzADEAYQBmAGQAZQA2ADAANAA1AGQAYQBiADMAMQA2AGYAZQBkAGIANgAz
+ADYANwA0ADYAMgBiAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAACC
+S7ulNbd+Q73+CnimfoRWAAi3elxWGTTgiQiJhF3NgIDMkQIGCAMGEQgEAAAAAAQBAAAAAgYNAwYS
+HAMGEjwDBhIUCAACEjwSPBEQDAAEEjwSPBIUEiASFAUAAg0NCAQAAQgNBgABEhwSPAYAARI8EhwE
+AAENDQMGERAJBhUSGQIRGBIUAyAADQQgAQENBiADAQ0NDQYAARIUERgDKAANAwYRGAQCAAAAAyAA
+CgQgAQEKBSACAQoKBSABAhIcBiACAhIcAgUgAQESHAYAARIcEhwCBgoDKAAKCQYVEhkCESQSIAQg
+ABEQBSABAREQDCAIAQ0NDQ0NDQ0REAYAARIgESQEKAAREAMGESQDBhI0AwYSOAMgAAEJIAQBCA4S
+HRIhBSABARIwCSADARIdHQgSIQMgAAgDIAACBCABAQwEIAEBAgMoAAgDKAACAygADAMGEg0FIAEB
+Eg0EIAARCAUgAQERCAogBQENDQ0RCBEQCAACEjwSPBEIByADAhI8AgIFIAECEjwGAAESPBI8BSAB
+ARI8BCABAQgEKAARCAMGEiUDBhIpBAAAEiUEAAASKQUAAQESKQQIABIlBAgAEikDBhJEBAAAEkQE
+CAASRAQgAQEOBAcBEjwFAAINDQ0gBx0SPA0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0FAAER
+ZQ0IAAIRZRFlEWUFAAENEWUEBwINDQMgAA4FIAEOHQMGBwMNDR0DJQciDQ0NDQ0NDQ0NDQ0NDQ0N
+DQ0NDQ0NDQ0NDQ0NDQ0NDQ0NEjwDAAABCBUSGQIRGBIUBiABEwETAAcgAgETABMBCgcBFRIZAhEY
+EhQGBwQICAgIAwcBDQgVEhkCESQSIAoHARUSGQIRJBIgBiACAg4ReQUgAR0ICAgHBAoKEhwSPAMG
+Eh0DBh0IBCABCAgEIAECCAUgAgEIHAgHBggICAgICAgAARKAjRGAkQUgABKAlQcgAgEOEoCVBAcB
+EiUGIAEBEYCdCAEAAgAAAAAARwEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRGcmFt
+ZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZyYW1ld29yayA0KAEAI1NDXzI3OGIzMWFmZGU2MDQ1ZGFi
+MzE2ZmVkYjYzNjc0NjJiAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMTUAAAgBAAgAAAAAAB4B
+AAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEAALxdAAAAAAAAAAAAAN5dAAAAIAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAADQXQAAAAAAAAAAAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5k
+bGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAGAAAgAAAAAAAAAAA
+AAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhgAACwAwAAAAAAAAAAAACw
+AzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv/gAAAQAAAAEAg5zxFQAA
+AQCDnPEVPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQByAEYAaQBsAGUASQBu
+AGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAAALAEEAMAAAEAUwB0AHIA
+aQBuAGcARgBpAGwAZQBJAG4AZgBvAAAA7AIAAAEAMAAwADAAMAAwADQAYgAwAAAAcAAkAAEARgBp
+AGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBfADIANwA4AGIAMwAxAGEAZgBkAGUA
+NgAwADQANQBkAGEAYgAzADEANgBmAGUAZABiADYAMwA2ADcANAA2ADIAYgAAAEAADwABAEYAaQBs
+AGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA1ADYAMQA3AC4ANAAwADAANgA3AAAAAABwACgA
+AQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADIANwA4AGIAMwAxAGEAZgBkAGUANgAw
+ADQANQBkAGEAYgAzADEANgBmAGUAZABiADYAMwA2ADcANAA2ADIAYgAuAGQAbABsAAAASAASAAEA
+TABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAy
+ADAAMQA1AAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADIA
+NwA4AGIAMwAxAGEAZgBkAGUANgAwADQANQBkAGEAYgAzADEANgBmAGUAZABiADYAMwA2ADcANAA2
+ADIAYgAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwAyADcA
+OABiADMAMQBhAGYAZABlADYAMAA0ADUAZABhAGIAMwAxADYAZgBlAGQAYgA2ADMANgA3ADQANgAy
+AGIAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUANgAxADcA
+LgA0ADAAMAA2ADcAAAAAAEgADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAx
+AC4AMAAuADUANgAxADcALgA0ADAAMAA2ADcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAMAAAA8D0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                              </arrayElements>
+                            </property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                              name="VSTAProjectName"
+                              typeConverter="NOTBROWSABLE">SC_278b31afde6045dab316fedb6367462b</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the programming language used by the script."
+                              name="ScriptLanguage"
+                              typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages, Microsoft.SqlServer.VSTAScriptingLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">CSharp</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies a comma-separated list of read-only variables."
+                              name="ReadOnlyVariables"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies a comma-separated list of read/write variables."
+                              name="ReadWriteVariables"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                            <property
+                              dataType="System.String"
+                              description="List of breakpoints present on the script."
+                              isArray="true"
+                              name="BreakpointCollection"
+                              typeConverter="NOTBROWSABLE">
+                              <arrayElements
+                                arrayElementCount="0" />
+                            </property>
+                            <property
+                              dataType="System.String"
+                              description="Checksum to match component metedata against compiled codes."
+                              name="MetadataChecksum"
+                              typeConverter="NOTBROWSABLE">60a3617f9d625a1b7db56f6677f47675</property>
+                            <property
+                              dataType="System.String"
+                              name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                          </properties>
+                          <inputs>
+                            <input
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Inputs[Input 0]"
+                              hasSideEffects="true"
+                              name="Input 0">
+                              <inputColumns>
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Inputs[Input 0].Columns[Eastings]"
+                                  cachedDataType="i4"
+                                  cachedName="Eastings"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Eastings]" />
+                                <inputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Inputs[Input 0].Columns[Northings]"
+                                  cachedDataType="i4"
+                                  cachedName="Northings"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output].Columns[Northings]" />
+                              </inputColumns>
+                              <externalMetadataColumns />
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0]"
+                              name="Output 0"
+                              synchronousInputId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Inputs[Input 0]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0].Columns[Latitude]"
+                                  dataType="r4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0].Columns[Latitude]"
+                                  name="Latitude" />
+                                <outputColumn
+                                  refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0].Columns[Longitude]"
+                                  dataType="r4"
+                                  lineageId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0].Columns[Longitude]"
+                                  name="Longitude" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                      </components>
+                      <paths>
+                        <path
+                          refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point.Paths[Derived Column Output]"
+                          endId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Inputs[Input 0]"
+                          name="Derived Column Output"
+                          startId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Outputs[Derived Column Output]" />
+                        <path
+                          refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point.Paths[Flat File Source Output]"
+                          endId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename.Inputs[Derived Column Input]"
+                          name="Flat File Source Output"
+                          startId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point.Outputs[Flat File Source Output]" />
+                        <path
+                          refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point.Paths[Output 0]"
+                          endId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point.Inputs[OLE DB Destination Input]"
+                          name="Output 0"
+                          startId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat.Outputs[Output 0]" />
+                      </paths>
+                    </pipeline>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:ForEachVariableMappings>
+                <DTS:ForEachVariableMapping
+                  DTS:CreationName=""
+                  DTS:DTSID="{D957A2D0-C3C5-4B39-A3F9-99194A581525}"
+                  DTS:ObjectName="{D957A2D0-C3C5-4B39-A3F9-99194A581525}"
+                  DTS:ValueIndex="0"
+                  DTS:VariableName="User::CodePointFile" />
+              </DTS:ForEachVariableMappings>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{851291AC-4A95-4513-8FF2-0E6D295255B9}"
+              DTS:From="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\EXEC_Truncate_Code-Point"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -5542,7 +8145,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="182,42"
           Id="Package\SEQC_Edubase_Data\DFT_Edubase_Extract"
@@ -5650,6 +8253,57 @@
           Size="186,352"
           Id="Package\SEQC_FOI_Data"
           TopLeft="5.50000000000006,5.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point"
+          TopLeft="31,33" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="235,130"
+          Size="235,173"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles"
+          TopLeft="5,84.5" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\EXEC_Truncate_Code-Point"
+          TopLeft="21,7" />
+        <EdgeLayout
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point.PrecedenceConstraints[Constraint]"
+          TopLeft="123.75,49">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.5"
+              Start="0,0"
+              End="0,28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="266,312"
+          Size="266,356"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point"
+          TopLeft="25,32" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="296,443"
+          Size="296,486"
+          Id="Package\SEQC_OrdnanceSurvey"
+          TopLeft="535,42" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5657,7 +8311,7 @@
     design-time-name="Package\SEQC_Edubase_Data\DFT_Edubase_Extract">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\SEQC_Edubase_Data\DFT_Edubase_Extract\FF_SRC_Extract"
@@ -5685,7 +8339,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5839,6 +8495,133 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\SEQC_FOI_Data\FELC_LoadCSVs\DFT_MIS\OLE_DST_MIS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\FF_SRC_Data-Point"
+          TopLeft="10.5,5.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point"
+          TopLeft="5.50000000000003,311.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\DER_Filename"
+          TopLeft="22,107.5" />
+        <EdgeLayout
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point.Paths[Flat File Source Output]"
+          TopLeft="95.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="183,42"
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\SC_ConvertToLongLat"
+          TopLeft="101,204" />
+        <EdgeLayout
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point.Paths[Derived Column Output]"
+          TopLeft="95.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97,54.5"
+              Start="0,0"
+              End="97,47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.25"
+                    Point2="0,27.25"
+                    Point3="4,27.25" />
+                  <mssgle:LineSegment
+                    End="93,27.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="93,27.25"
+                    Point2="97,27.25"
+                    Point3="97,31.25" />
+                  <mssgle:LineSegment
+                    End="97,47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point.Paths[Output 0]"
+          TopLeft="192.5,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-97,65.5"
+              Start="0,0"
+              End="-97,58">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.75"
+                    Point2="0,32.75"
+                    Point3="-4,32.75" />
+                  <mssgle:LineSegment
+                    End="-93,32.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93,32.75"
+                    Point2="-97,32.75"
+                    Point3="-97,36.75" />
+                  <mssgle:LineSegment
+                    End="-97,58" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_OrdnanceSurvey\SEQC_Code-Point\FELC_LoadCSVFiles\DFT_Code-Point\OLE_DST_Code-Point">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
